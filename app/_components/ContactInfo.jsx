@@ -4,7 +4,7 @@ import { Instagram, Mail,Phone } from "lucide-react";
 
 const contactItems = [
   { icon: Instagram, title: "Instagram", content: "@yektun1" },
-  { icon: Mail, title: "E-posta", content: "alituncer847@gmail.com" },
+  { icon: Mail, title: "E-posta", content: "ali.tuncer@yektun.com" },
   { icon: Phone, title: "Telefon", content: "0534 260 17 42" },
 ];
 

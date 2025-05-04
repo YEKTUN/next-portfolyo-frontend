@@ -1,22 +1,26 @@
-"use client"
+
 import Image from "next/image";
 import { Calendar } from "lucide-react";
 import { notFound } from "next/navigation";
 import { blogs } from "@/blogs";
 
-
+// ✅ `generateStaticParams` ekliyoruz
+export async function generateStaticParams() {
+  return blogs.map((blog) => ({
+    slug: blog.slug, // Burada tüm blogların slug'larını alıyoruz
+  }));
+}
 
 // 🔥 Dinamik parametreyi alarak ilgili blogu bul
 export default function BlogDetail({ params }) {
-  const blog = blogs.find((b) => b.slug === params.slug);
-  console.log("Params:", params); // 🔍 Hata ayıklama için ekrana yazdır
   if (!params || !params.slug) {
     console.error("Hata: params.slug tanımlı değil!");
-    return notFound(); // 🔴 Geçersiz URL için 404 sayfasına yönlendir
+    return notFound();
   }
 
+  const blog = blogs.find((b) => b.slug === params.slug);
   if (!blog) {
-    return notFound(); // Eğer blog bulunamazsa 404 sayfasına yönlendir
+    return notFound();
   }
 
   return (

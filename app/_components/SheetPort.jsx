@@ -26,24 +26,24 @@ export function SheetDemo() {
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <SheetClose asChild>
-          <Link href="/">
-            <Button variant="link1">Hakkımda</Button>
-          </Link>
+        <Link className={"text-emerald-300 hover:text-emerald-500 active:text-emerald-300"} href={"/"}>
+          Hakkımda
+        </Link>
         </SheetClose>
         <SheetClose asChild>
-          <Link href="/projects">
-            <Button variant="link1">Projeler</Button>
-          </Link>
+        <Link className={"text-emerald-300 hover:text-emerald-500 active:text-emerald-300"} href={"/projects"}>
+          Projeler
+        </Link>
         </SheetClose>
         <SheetClose asChild>
-          <Link href="/blogs">
-            <Button variant="link1">Blog</Button>
-          </Link>
+        <Link className={"text-emerald-300 hover:text-emerald-500 active:text-emerald-300"} href={"/blogs"}>
+          Blog
+        </Link>
         </SheetClose>
         <SheetClose asChild>
-          <Link href="/contact">
-            <Button variant="link1">İletişim</Button>
-          </Link>
+        <Link className={"text-emerald-300 hover:text-emerald-500 active:text-emerald-300"} href={"/contact"}>
+          İletişim
+        </Link>
         </SheetClose>
       </SheetContent>
     </Sheet>

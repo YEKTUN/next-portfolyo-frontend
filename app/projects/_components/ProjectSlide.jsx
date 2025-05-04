@@ -7,17 +7,16 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { Link } from "lucide-react";
 
 const projectInfos = [
   {
-    projectName: "MobilePano",
+    projectName: "Genyzio",
     projectDescription:
-      "Bu mobil pano sayesinde mobil uygulama geliştireceğimiz zaman bir mock-up ile birlikte ön hazırlık konusunda bizlere yardımcı olmaktadır.29 farklı bileşen için özellikleri json olarak alınmaktadır.Bu özellikleri PropertiesPanel aracılığıyla güncelleyebilmekteyiz.",
-    projectUsedTechnologies: "React.js, TailwindCSS,Redux Toolkit,Node.js",
-    projectCompletionTime: "7 Gün",
-    projectImage: "/portolyoImages/mobile-pano.png",
-    projectURL:""
+      "Genyzio kullanıcılar satış yapabilmesini sağlayan bir e ticaret uygulamasıdır. Kullanıcılar ürünlerini ekleyebilir, düzenleyebilir ve silebilirler. Müşteri ve satıcı olarak iki farklı kullanıcı tipi bulunmaktadır. Müşteriler ürünleri görüntüleyebilir ve satın alabilirler. Satıcılar ise ürünlerini ekleyebilir, düzenleyebilir ve silebilirler.",
+    projectUsedTechnologies: "Next.js, TailwindCSS,Node.js,Redux Toolkit",
+    projectCompletionTime: "4 Gün",
+    projectImage: "/portolyoImages/genyzio.png?v=2",
+    projectURL: "https://genyzio-com.vercel.app",
   },
   {
     projectName: "DijiPano",
@@ -25,8 +24,17 @@ const projectInfos = [
       "Bu pano veya afiş tasarımı yapabileceğimiz bir editör diyebiliriz. Reklam afişlerinde ,sokak panolarında kullanabileceğimiz bir pano editörüdür.",
     projectUsedTechnologies: "React.js, TailwindCSS,Node.js,Redux Toolkit",
     projectCompletionTime: "5 Gün",
-    projectImage:  "/portolyoImages/pano-creator.png",
-    projectURL:""
+    projectImage: "/portolyoImages/pano-creator.png?v=2",
+    projectURL: "https://dijipano-react.onrender.com",
+  },
+  {
+    projectName: "MobilePano",
+    projectDescription:
+      "Bu mobil pano sayesinde mobil uygulama geliştireceğimiz zaman bir mock-up ile birlikte ön hazırlık konusunda bizlere yardımcı olmaktadır.29 farklı bileşen için özellikleri json olarak alınmaktadır.Bu özellikleri PropertiesPanel aracılığıyla güncelleyebilmekteyiz.",
+    projectUsedTechnologies: "React.js, TailwindCSS,Redux Toolkit,Node.js",
+    projectCompletionTime: "7 Gün",
+    projectImage: "/portolyoImages/mobile-pano.png?v=2",
+    projectURL: "https://mobile-pano-react.onrender.com",
   },
   {
     projectName: "Rhodark",
@@ -34,9 +42,8 @@ const projectInfos = [
       "Bitkiler ile ilgili  kitleri bağlayıp onları kontrol etme ve bilgi alma amaçlı yazılmıştir.Sadece frontend tarafı mevcuttur.",
     projectUsedTechnologies: "React Native, NativeWind",
     projectCompletionTime: "5 Gün",
-    projectImage:  "/portolyoImages/rhodark.png",
+    projectImage: "/portolyoImages/rhodark.png?v=2",
   },
- 
 ];
 
 export function ProjectSlide() {
@@ -51,28 +58,28 @@ export function ProjectSlide() {
       ]}
       className="w-full max-w-screen  overflow-hidden px-4 md:px-10 lg:px-20"
     >
-      <CarouselContent >
+      <CarouselContent>
         {projectInfos.map((project, index) => (
           <CarouselItem key={index} className="basis-full  ">
             <Card className="bg-gray-200 dark:bg-[#16181d] shadow-md shadow-emerald-300 text-white border-none rounded-2xl">
               <CardContent className="p-4 flex flex-col items-center h-[600px] justify-center gap-4">
                 {/* Resim Boyutunu Sabitleme */}
                 <div className="w-[400px] h-[200px] md:w-[800px] md:h-[800px] relative overflow-hidden rounded-xl">
-                  {project.projectName==="Rhodark"?(
-                    
+                  {project.projectName === "Rhodark" ? (
                     <Image
-                    src={project.projectImage}
-                    alt={project.projectName || "image"}
-                    height={200}
-                    width={200}
-                    className="ml-[155px] md:ml-[300px] w-25 h-50 md:w-[200px] md:h-[450px]"/> // 🔥 Tüm resimleri kırpmadan kaplamasını sağlar
-                  ):(
+                      src={project.projectImage}
+                      alt={project.projectName || "image"}
+                      height={200}
+                      width={200}
+                      className="ml-[155px] md:ml-[300px] w-25 h-50 md:w-[200px] md:h-[450px]"
+                    /> // 🔥 Tüm resimleri kırpmadan kaplamasını sağlar
+                  ) : (
                     <Image
                       src={project.projectImage}
                       alt={project.projectName || "image"}
                       fill // 🔥 `fill` kullanarak otomatik boyutlandır
                       className="object-cover" // 🔥 Tüm resimleri kırpmadan kaplamasını sağlar
-                      />
+                    />
                   )}
                 </div>
                 <div className="text-center">
@@ -95,13 +102,23 @@ export function ProjectSlide() {
                       </span>{" "}
                       {project.projectCompletionTime}
                     </p>
-                    {project.projectName!=="Rhodark"&&(
+                    {project.projectName !== "Rhodark" && (
                       <p className="text-black dark:text-gray-400 mt-2">
-                      <a target="_blank"  href={project.projectName==="Rhodark"?"":project.projectURL} className="space-x-4  text-emerald-900 dark:text-emerald-300">
-                      <Link className="inline"/><span>Demoya Gidin</span>
-                      </a>{" "}
-                     
-                    </p>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={
+                            project.projectName === "Rhodark"
+                              ? ""
+                              : project.projectURL
+                          }
+                          className="space-x-4  text-emerald-900 dark:text-emerald-200"
+                        >
+                          <span className="active:text-blue-300 hover:text-blue-500 border-b-2 border-emerald-200 hover:scale-50 transition-all duration-300 ease-in-out">
+                            Demoya Gidin
+                          </span>
+                        </a>{" "}
+                      </p>
                     )}
                   </div>
                 </div>
