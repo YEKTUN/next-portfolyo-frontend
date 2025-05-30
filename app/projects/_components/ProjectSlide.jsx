@@ -109,8 +109,8 @@ export function ProjectSlide() {
                     </CarouselContent>
 
                     {/* Ok Tuşları */}
-                    <CarouselPrevious className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-10" />
-                    <CarouselNext className="absolute right-[-40px] top-1/2 -translate-y-1/2 z-10" />
+                    <CarouselPrevious className="absolute left-0 md:left-[-40px] top-1/2 -translate-y-1/2 z-10" />
+                    <CarouselNext className="absolute right-0 md:right-[-40px] top-1/2 -translate-y-1/2 z-10" />
                   </Carousel>
                 ) : (
                   // Tek görsel varsa Carousel yok
